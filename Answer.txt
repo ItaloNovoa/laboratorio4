@@ -1,0 +1,10 @@
+Parte 1
+What is the reason of this CPU consumption?
+
+
+(Poner imagen)
+
+Ya que tenemos la clase (hilo) que siempre esta realizando una consulta a una cola y esto genera un uso de la CPU.
+
+What is the class responsable of that consumption?
+La clase Consumer.
