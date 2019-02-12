@@ -16,27 +16,28 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class ThreadBlack extends Thread{
     int ini,fin;
     String addres;
-    AtomicInteger ocurrencesCount= new AtomicInteger(0);
+    AtomicInteger ocurrencesCount;
     int checked=0;
     LinkedList<Integer> blackListOcur = new LinkedList();
     HostBlacklistsDataSourceFacade skds=HostBlacklistsDataSourceFacade.getInstance();
     
-    ThreadBlack(int ini,int fin,String addres)
+    ThreadBlack(int ini,int fin,String addres, AtomicInteger ocurrencesCount)
     {
-      System.out.println("my thread created" + this);
       this.ini=ini;
       this.fin=fin;
-      this.addres=addres;    
+      this.addres=addres; 
+      this.ocurrencesCount=ocurrencesCount;
     }
     
    public void run()
    {
-       for (int i=ini;i<fin && ocurrencesCount.get()<5;i++){  
-           checked++;
+       for (int i=ini;i<fin && ocurrencesCount.get()<5;i++){         
+       		checked++;
             if (skds.isInBlackListServer(i, addres)){
                 blackListOcur.add(i); 
                 ocurrencesCount.incrementAndGet();
             }
+            
         }
    }
 
