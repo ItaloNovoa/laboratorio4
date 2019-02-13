@@ -92,6 +92,8 @@ public class Immortal extends Thread {
                 updateCallback.processReport(this + " says:" + i2 + " is already dead!\n");
                 muertos.add(immortalsPopulation.indexOf(i2));
                 i2.stop();
+                i2.changeHealth(0);
+                
             }
 		}
     }
