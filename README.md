@@ -26,6 +26,6 @@ La cantidad total de puntos de vida es igual a la cantidad de inmortales inicial
 
 No ya que no hay un control para que dos  o mas inmortales cogan al mismo tiempo a un tercero modificando asi la cantidad de vida total positivamente
 
-##### 5 erify again the functionality clicking many times. Is the invariant satisfied?
+##### 5 Verify again the functionality clicking many times. Is the invariant satisfied?
 
 No ya que aun no se implementa el control de syncronizacion sobre las zonas criticas
